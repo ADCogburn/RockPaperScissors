@@ -10,25 +10,27 @@ namespace RockPaperScissors
             Console.WriteLine("Welcome to Rock, Paper, and Scissors!");
             Console.WriteLine("Please choose an option: Rock, Paper, or Scissors.");
 
-            string playerChoice = Console.ReadLine();
-            int check = 0;
+            var answered = false;
 
-            playerChoice = playerChoice.ToLower();
             // Check if the player made a valid choice.
             // Currently 'crashes' if the choice is invalid; I need to find a way to push it back to the top.
-            while (check == 0)
+            while (answered == false)
             {
-                if (playerChoice == "rock")
+                string playerChoice = Console.ReadLine();
+                switch (playerChoice)
                 {
-                    check++;
-                }
-                else if (playerChoice == "paper")
-                {
-                    check++;
-                }
-                else if (playerChoice == "scissor")
-                {
-                    check++;
+                    case "rock":
+                        answered = true;
+                        break;
+                    case "paper":
+                        answered = true;
+                        break;
+                    case "scissors":
+                        answered = true;
+                        break;
+                    default:
+                        Console.WriteLine("Please try again. Choose 'rock', 'paper', or 'scissors'.");
+                        break;
                 }
             }
         }
