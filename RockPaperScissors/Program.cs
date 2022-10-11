@@ -16,21 +16,20 @@ namespace RockPaperScissors
             playerChoice = playerChoice.ToLower();
             // Check if the player made a valid choice.
             // Currently 'crashes' if the choice is invalid; I need to find a way to push it back to the top.
-            if (playerChoice == "rock")
+            while (check == 0)
             {
-                Console.WriteLine("Great, your choice is rock.");
-            }
-            else if (playerChoice == "paper")
-            {
-                Console.WriteLine("Great, your choice is paper.");
-            }
-            else if (playerChoice == "scissors")
-            {
-                Console.WriteLine("Great, your choice is scissors.");
-            }
-            else
-            {
-                Console.WriteLine("You did not chose a valid option. Please restart.");
+                if (playerChoice == "rock")
+                {
+                    check++;
+                }
+                else if (playerChoice == "paper")
+                {
+                    check++;
+                }
+                else if (playerChoice == "scissor")
+                {
+                    check++;
+                }
             }
         }
     }
